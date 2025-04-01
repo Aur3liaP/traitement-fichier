@@ -47,7 +47,7 @@ public class Produit {
         final StringBuilder sb = new StringBuilder("\n - ");
         sb.append(categorie);
         sb.append(" de ").append(marque);
-        sb.append(" avec un score : ").append(scoreNutritionnel);
+        sb.append(" avec un score : ").append(Character.toUpperCase(scoreNutritionnel));
         sb.append(", valeurs nutritionnelles : ").append(valeursNutritionnelles);
         sb.append("\n\t Ingrédients : ").append(ingredients);
         sb.append("\n\t Additifs : ").append(additifs);

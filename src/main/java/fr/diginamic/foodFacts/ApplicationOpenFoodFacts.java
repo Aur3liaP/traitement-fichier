@@ -5,6 +5,8 @@ import java.util.*;
 
 public class ApplicationOpenFoodFacts {
     private final Stock stock;
+    private static final int TOP_PRODUCTS = 15;
+    private static final int TOP_LIMIT = 10;
 
     public ApplicationOpenFoodFacts(Stock stock) {
         this.stock = stock;
@@ -59,7 +61,6 @@ public class ApplicationOpenFoodFacts {
                     System.out.println("Option invalide :'(  Choisissez entre 0 et 5.");
             }
         } while (choix != 0);
-
     }
 
     private void meilleursProduitsParMarque(Scanner scanner){
@@ -74,7 +75,7 @@ public class ApplicationOpenFoodFacts {
         }
 
         Collections.sort(meilleursProduits, new ComparateurScoreNutritionnel());
-        int limit = Math.min(15, meilleursProduits.size());
+        int limit = Math.min(TOP_PRODUCTS, meilleursProduits.size());
 
         System.out.println("Les 15 des meilleurs produits de " + marque + ":");
         for (int i = 0; i < limit; i++) {
@@ -96,14 +97,13 @@ public class ApplicationOpenFoodFacts {
         }
 
         Collections.sort(meilleursProduits, new ComparateurScoreNutritionnel());
-        int limit = Math.min(15, meilleursProduits.size());
+        int limit = Math.min(TOP_PRODUCTS, meilleursProduits.size());
 
-        System.out.println("Les 15 des meilleurs produits dans la catégorie " + categorie + ":");
+        System.out.println("Les " + TOP_PRODUCTS +" des meilleurs produits dans la catégorie " + categorie + ":");
         for (int i = 0; i < limit; i++) {
             Produit produit = meilleursProduits.get(i);
             System.out.println(produit);
         }
-
     }
 
     private void meilleursProduitsParMarqueEtCategorie(Scanner scanner){
@@ -122,14 +122,13 @@ public class ApplicationOpenFoodFacts {
         }
 
         Collections.sort(meilleursProduits, new ComparateurScoreNutritionnel());
-        int limit = Math.min(15, meilleursProduits.size());
+        int limit = Math.min(TOP_PRODUCTS, meilleursProduits.size());
 
-        System.out.println("Les 15 des meilleurs produits de " + marque + " dans la catégorie " + categorie + ":");
+        System.out.println("Les " + TOP_PRODUCTS +" des meilleurs produits de " + marque + " dans la catégorie " + categorie + ":");
         for (int i = 0; i < limit; i++) {
             Produit produit = meilleursProduits.get(i);
             System.out.println(produit);
         }
-
     }
 
     private void afficherAllergenesCourants() {
@@ -143,8 +142,8 @@ public class ApplicationOpenFoodFacts {
         List<Map.Entry<String, Integer>> allergenesTries = new ArrayList<>(allergenesCourants.entrySet());
         Collections.sort(allergenesTries, new ComparateurAllergenes());
 
-        System.out.println("Top 10 des allergènes les plus courants :");
-        int limit = Math.min(10, allergenesTries.size());
+        System.out.println("Top " + TOP_LIMIT +" des allergènes les plus courants :");
+        int limit = Math.min(TOP_LIMIT, allergenesTries.size());
         for (int i = 0; i < limit; i++) {
             Map.Entry<String, Integer> entry = allergenesTries.get(i);
             System.out.println(entry.getKey() + " avec " + entry.getValue() + " produits");
@@ -163,8 +162,8 @@ public class ApplicationOpenFoodFacts {
         List<Map.Entry<String, Integer>> additifsTries = new ArrayList<>(additifsCourants.entrySet());
         Collections.sort(additifsTries, new ComparateurAdditifs());
 
-        System.out.println("Top 10 des additifs les plus courants :");
-        int limit = Math.min(10, additifsTries.size());
+        System.out.println("Top " + TOP_LIMIT +" des additifs les plus courants :");
+        int limit = Math.min(TOP_LIMIT, additifsTries.size());
         for (int i = 0; i < limit; i++) {
             Map.Entry<String, Integer> entry = additifsTries.get(i);
             System.out.println(entry.getKey() + ", Nombre de produits: " + entry.getValue());
