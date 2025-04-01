@@ -26,56 +26,20 @@ public class Produit {
         return categorie;
     }
 
-    public void setCategorie(Categorie categorie) {
-        this.categorie = categorie;
-    }
-
     public Marque getMarque() {
         return marque;
-    }
-
-    public void setMarque(Marque marque) {
-        this.marque = marque;
     }
 
     public char getScoreNutritionnel() {
         return scoreNutritionnel;
     }
 
-    public void setScoreNutritionnel(char scoreNutritionnel) {
-        this.scoreNutritionnel = scoreNutritionnel;
-    }
-
-    public Double getValeurNutritionnelle(String type) {
-        return valeursNutritionnelles.getOrDefault(type, null);
-    }
-
-    public void setValeursNutritionnelles(Map<String, Double> valeursNutritionnelles) {
-        this.valeursNutritionnelles = valeursNutritionnelles;
-    }
-
-    public List<Ingredient> getIngredients() {
-        return ingredients;
-    }
-
-    public void setIngredients(List<Ingredient> ingredients) {
-        this.ingredients = ingredients;
-    }
-
     public List<Additif> getAdditifs() {
         return additifs;
     }
 
-    public void setAdditifs(List<Additif> additifs) {
-        this.additifs = additifs;
-    }
-
     public List<Allergene> getAllergenes() {
         return allergenes;
-    }
-
-    public void setAllergenes(List<Allergene> allergenes) {
-        this.allergenes = allergenes;
     }
 
     @Override
