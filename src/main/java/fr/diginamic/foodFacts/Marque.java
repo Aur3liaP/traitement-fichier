@@ -13,9 +13,7 @@ public class Marque {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Marque{");
-        sb.append(nom).append(' ');
-        sb.append('}');
+        final StringBuilder sb = new StringBuilder(nom);
         return sb.toString();
     }
 }

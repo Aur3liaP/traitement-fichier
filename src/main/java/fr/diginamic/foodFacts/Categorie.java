@@ -13,9 +13,7 @@ public class Categorie {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Categorie{");
-        sb.append(libelle).append(' ');
-        sb.append('}');
+        final StringBuilder sb = new StringBuilder(libelle);
         return sb.toString();
     }
 }

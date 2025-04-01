@@ -14,9 +14,7 @@ public class Allergene {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder(" Allergene{");
-        sb.append(libelle).append(' ');
-        sb.append('}');
+        final StringBuilder sb = new StringBuilder(libelle);
         return sb.toString();
     }
 }

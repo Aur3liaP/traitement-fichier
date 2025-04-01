@@ -44,15 +44,14 @@ public class Produit {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("\nProduit{");
+        final StringBuilder sb = new StringBuilder("\n - ");
         sb.append(categorie);
-        sb.append(marque);
-        sb.append(" Score Nutritionnel :").append(scoreNutritionnel);
-        sb.append(" Valeurs Nutritionnelles :").append(valeursNutritionnelles);
-        sb.append(ingredients);
-        sb.append(additifs);
-        sb.append(allergenes);
-        sb.append("}");
+        sb.append(" de ").append(marque);
+        sb.append(" avec un score : ").append(scoreNutritionnel);
+        sb.append(", valeurs nutritionnelles : ").append(valeursNutritionnelles);
+        sb.append("\n\t Ingrédients : ").append(ingredients);
+        sb.append("\n\t Additifs : ").append(additifs);
+        sb.append("\n\t Allergènes : ").append(allergenes);
         return sb.toString();
     }
 }

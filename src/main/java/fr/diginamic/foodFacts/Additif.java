@@ -13,9 +13,7 @@ public class Additif {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder(" Additif{");
-        sb.append(libelle).append(' ');
-        sb.append('}');
+        final StringBuilder sb = new StringBuilder(libelle);
         return sb.toString();
     }
 }
