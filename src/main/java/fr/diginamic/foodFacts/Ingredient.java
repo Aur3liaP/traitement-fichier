@@ -10,4 +10,12 @@ public class Ingredient {
     public String getLibelle() {
         return libelle;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Ingredient{");
+        sb.append(libelle).append(' ');
+        sb.append('}');
+        return sb.toString();
+    }
 }

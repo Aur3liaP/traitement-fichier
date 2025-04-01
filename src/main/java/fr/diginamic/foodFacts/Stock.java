@@ -17,4 +17,11 @@ public class Stock {
         return produits;
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Stock{");
+        sb.append(produits);
+        sb.append('}');
+        return sb.toString();
+    }
 }

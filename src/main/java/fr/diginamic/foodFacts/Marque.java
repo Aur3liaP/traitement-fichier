@@ -10,4 +10,12 @@ public class Marque {
     public String getNom() {
         return nom;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Marque{");
+        sb.append(nom).append(' ');
+        sb.append('}');
+        return sb.toString();
+    }
 }

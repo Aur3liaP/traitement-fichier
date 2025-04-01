@@ -10,4 +10,12 @@ public class Categorie {
     public String getLibelle() {
         return libelle;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Categorie{");
+        sb.append(libelle).append(' ');
+        sb.append('}');
+        return sb.toString();
+    }
 }
