@@ -5,9 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 public class FichierUtil {
     public static void lireFichier(String fichier, Stock stock) throws IOException {
@@ -29,7 +27,7 @@ public class FichierUtil {
 
             char scoreNutritionnel = token[3].charAt(0);
 
-            ArrayList<Ingredient> ingredients = new ArrayList<>();
+            Set<Ingredient> ingredients = new HashSet<>();
             if (!token[4].isEmpty()) {
                 String[] ingredientListe = token[4].split(",");
                 for (String ingredient : ingredientListe) {
@@ -62,16 +60,16 @@ public class FichierUtil {
             valeursNutritionnelles.put("fer100g", parseDouble(token[25]));
             valeursNutritionnelles.put("betaCarotene100g", parseDouble(token[26]));
 
-            List<Allergene> allergenes = new ArrayList<>();
+            Set<Allergene> allergenes = new HashSet<>();
             if (!token[28].isEmpty()) {
                 String[] allergeneListe = token[28].split(",");
                 for (String allergene : allergeneListe) {
-                    allergenes.add(new Allergene(allergene.trim()));
+                    allergenes.add(new Allergene(allergene.trim().toLowerCase()));
                 }
             }
 
 
-            List<Additif> additifs = new ArrayList<>();
+            Set<Additif> additifs = new HashSet<>();
             if (!token[29].isEmpty()) {
                 String[] additifListe = token[29].split(",");
                 for (String additif : additifListe) {

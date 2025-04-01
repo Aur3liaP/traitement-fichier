@@ -3,7 +3,7 @@ package fr.diginamic.foodFacts;
 import java.util.ArrayList;
 
 public class Stock {
-    private ArrayList<Produit> produits;
+    private final ArrayList<Produit> produits;
 
     public Stock() {
         this.produits = new ArrayList<>();

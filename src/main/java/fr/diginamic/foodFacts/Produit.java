@@ -1,18 +1,18 @@
 package fr.diginamic.foodFacts;
 
-import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class Produit {
-    private Categorie categorie;
-    private Marque marque;
-    private char scoreNutritionnel;
-    private Map<String, Double> valeursNutritionnelles;
-    private List<Ingredient> ingredients;
-    private List<Additif> additifs;
-    private List<Allergene> allergenes;
+    private final Categorie categorie;
+    private final Marque marque;
+    private final char scoreNutritionnel;
+    private final Map<String, Double> valeursNutritionnelles;
+    private final Set<Ingredient> ingredients;
+    private final Set<Additif> additifs;
+    private final Set<Allergene> allergenes;
 
-    public Produit(Categorie categorie, Marque marque, char scoreNutritionnel, Map<String, Double> valeursNutritionnelles, List<Ingredient> ingredients, List<Additif> additifs, List<Allergene> allergenes) {
+    public Produit(Categorie categorie, Marque marque, char scoreNutritionnel, Map<String, Double> valeursNutritionnelles, Set<Ingredient> ingredients, Set<Additif> additifs, Set<Allergene> allergenes) {
         this.categorie = categorie;
         this.marque = marque;
         this.scoreNutritionnel = scoreNutritionnel;
@@ -34,11 +34,11 @@ public class Produit {
         return scoreNutritionnel;
     }
 
-    public List<Additif> getAdditifs() {
+    public Set<Additif> getAdditifs() {
         return additifs;
     }
 
-    public List<Allergene> getAllergenes() {
+    public Set<Allergene> getAllergenes() {
         return allergenes;
     }
 

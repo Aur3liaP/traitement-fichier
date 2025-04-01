@@ -1,7 +1,7 @@
 package fr.diginamic.foodFacts;
 
 public class Marque {
-    private String nom;
+    private final String nom;
 
     public Marque(String nom) {
         this.nom = nom;
